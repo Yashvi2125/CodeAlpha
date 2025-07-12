@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    padding: 20px;
+    background: #f4f4f4;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .filter-buttons button:hover {
+    background: #555;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .lightbox .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 2em;
+    padding: 0 20px;
+  }
+  
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .lightbox .controls {
+      font-size: 1.5em;
+    }
+  }
+  
